@@ -31,8 +31,9 @@
 
 
 完成以上准备工作后，你离仿真模拟飞行的距离只差几步了，而且总共花费不到300元人民币。  
-第一步 打印座舱和舱盖  
+第一步 打印座舱和舱盖，制作风挡  
 <img src="https://github.com/mason334/images/blob/main/IMG_0859.JPG" alt="drawing" width="600"/>
+由于TFT LCD屏幕在阳光下亮度不够，直接在阳光下无法看清屏幕。所以风挡采用遮光塑料片，用于阳光下飞行使用。也可采用透明塑料片制作，非强光下飞行使用。
 
 第二步 购买电子设备  
 - ESP32-s3单片机（源地工作室，esp32-S3 N16R8)
@@ -43,7 +44,7 @@
 第三步 根据控制程序要求，焊接3块屏幕和ESP32单片机的接线。焊接ESP32单片机与飞控通信的排线。
 <img src="https://github.com/mason334/images/blob/main/IMG_0875.JPG" width="600"/>
 
-第四步 通过机载5V电源，给ESP32单片机供电，点亮屏幕。 将串口接上飞控，获得屏幕数据。  
+第四步 将代码上传到ESP32单片机，通过机载5V电源，给ESP32单片机供电，点亮屏幕。 将串口接上飞控，获得屏幕数据。  
 <img src="https://github.com/mason334/images/blob/main/IMG_1055.JPG" alt="drawing" width="600"/>
 
 第五步 将天空端、散热风扇安装好，然后座舱盖固定到机舱上，完成安装
