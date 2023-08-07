@@ -7,7 +7,7 @@
 GND   -> GND
 VCC   -> 3.3V
 
-其他的在Arduino\libraries\TFT_eSPI\User_Setup.h文件中修改
+在Arduino\libraries\TFT_eSPI\User_Setup.h文件中修改引脚定义
 // ###### EDIT THE PIN NUMBERS IN THE LINES FOLLOWING TO SUIT YOUR ESP32 SETUP   ######
 // For ESP32 Dev board (only tested with ILI9341 display)
 // The hardware SPI can be mapped to any pins
@@ -35,7 +35,7 @@ VCC   -> 3.3V
 TaskHandle_t Task1;
 TaskHandle_t Task2;
 
-//f35 image 所需变量
+//显示图片所需变量
 #define MAX_IMAGE_WDITH 320 // Adjust for your images
 int16_t xpos;
 int16_t ypos;
