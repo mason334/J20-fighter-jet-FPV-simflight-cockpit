@@ -41,13 +41,16 @@
 - 信利光电0.42 72x40 OLED SSD1306
 - 信泰微电子 2.2寸 ILI9341 SPI TFT LCD
 
-## 第三步 根据控制程序要求，焊接3块屏幕和ESP32单片机的接线。焊接ESP32单片机与飞控通信的排线。
+## 第三步 焊接  
+根据控制程序要求，焊接3块屏幕和ESP32单片机的接线。焊接ESP32单片机与飞控通信的排线。
 <img src="https://github.com/mason334/images/blob/main/IMG_0875.JPG" width="600"/>
 
-## 第四步 将代码上传到ESP32单片机，通过机载5V电源，给ESP32单片机供电，点亮屏幕。 将串口接上飞控，获得屏幕数据。  
+## 第四步 上传代码，点亮屏幕  
+将代码上传到ESP32单片机，通过机载5V电源，给ESP32单片机供电，点亮屏幕。 将串口接上飞控，获得屏幕数据。  
 <img src="https://github.com/mason334/images/blob/main/IMG_1055.JPG" alt="drawing" width="600"/>
 
-## 第五步 将天空端、散热风扇安装好，然后座舱盖固定到机舱上，完成安装
+## 第五步 安装其他设备  
+将天空端、散热风扇安装好，然后座舱盖固定到机舱上，完成安装
 <img src="https://github.com/mason334/images/blob/main/IMG_0936.JPG" alt="drawing" width="600"/>
 
 <img src="https://github.com/mason334/images/blob/main/IMG_0922.JPG" alt="drawing" width="600"/>
