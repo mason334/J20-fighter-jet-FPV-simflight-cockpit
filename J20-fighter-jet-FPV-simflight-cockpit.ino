@@ -22,14 +22,14 @@ VCC   -> 3.3V
 #define SCR_WD   320
 #define SCR_HT   240
 // #include "Free_Fonts.h" 
-#include <SPI.h>
-#include <Adafruit_GFX.h>
-#include <mavlink.h>
+#include <SPI.h> //arduino自带，无需安装
+#include <math.h> //arduino自带，无需安装
+#include "pictures.h" // Image is stored here in an 8 bit array，已写好，无需安装
+#include <Adafruit_GFX.h> 
 #include "TFT_eSPI.h"
-#include <math.h>
 #include <PNGdec.h>
-#include "pictures.h" // Image is stored here in an 8 bit array
 #include <U8g2lib.h>
+#include <mavlink.h> //需手下载mavlink.zip文件，手动安装此库
 
 // 双核运行所需handle，用于追踪执行情况
 TaskHandle_t Task1;
