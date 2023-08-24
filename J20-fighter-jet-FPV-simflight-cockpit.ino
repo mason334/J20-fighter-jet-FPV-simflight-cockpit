@@ -29,7 +29,7 @@ VCC   -> 3.3V
 #include "TFT_eSPI.h"
 #include <PNGdec.h>
 #include <U8g2lib.h>
-#include <mavlink.h> //需手下载mavlink.zip文件，手动安装此库
+#include <mavlink.h> //需下载mavlink.zip文件，手动安装此库
 
 // 双核运行所需handle，用于追踪执行情况
 TaskHandle_t Task1;
