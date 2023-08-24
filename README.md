@@ -53,16 +53,21 @@ CS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10  // Chip se
 DC &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 7  // Data Command control pin  
 RST &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4  // Reset pin (could connect to RST pin)  
 LED &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3V3  
+VCC &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3V3   
+GND &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GND  
 
 # 0.69寸96x16显示屏接线如下  
 显示屏引脚 &nbsp; &nbsp; &nbsp; ESP32引脚  
 SCL/SCK &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2  
 SDA &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 42  
-
+VCC &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3V3  
+GND &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GND  
 # 0.42寸72x40显示屏接线如下  
 显示屏引脚 &nbsp; &nbsp; &nbsp; ESP32引脚  
 SCL/SCK &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;20  
 SDA &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 21  
+VCC &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3V3  
+GND &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GND
 
 # 飞控串口通讯接线
 ESP32引脚 &nbsp; &nbsp; &nbsp; 飞控串口引脚  
