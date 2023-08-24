@@ -52,6 +52,7 @@ SCLK &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 12
 CS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10  // Chip select control pin  
 DC &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 7  // Data Command control pin  
 RST &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4  // Reset pin (could connect to RST pin)  
+LED &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3V3  
 
 # 0.69寸96x16显示屏接线如下  
 显示屏引脚 &nbsp; &nbsp; &nbsp; ESP32引脚  
