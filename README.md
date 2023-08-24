@@ -43,11 +43,40 @@
 - 盈讯 3510 液压轴承 散热风扇
 
 ## 第三步 焊接  
-根据控制程序要求，焊接3块屏幕和ESP32单片机的接线。焊接ESP32单片机与飞控通信的排线。
+根据控制程序要求，焊接3块屏幕和ESP32单片机的接线。焊接ESP32单片机与飞控通信的排线。  
+# 2.2寸显示屏接线如下  
+显示屏引脚 &nbsp; &nbsp; ESP32引脚  
+MISO &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;13  
+MOSI &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;11  
+SCLK &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 12  
+CS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10  // Chip select control pin  
+DC &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 7  // Data Command control pin  
+RST &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4  // Reset pin (could connect to RST pin)  
+
+# 0.69寸96x16显示屏接线如下  
+显示屏引脚 &nbsp; &nbsp; &nbsp; ESP32引脚  
+SCL/SCK &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2  
+SDA &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 42  
+
+# 0.42寸72x40显示屏接线如下  
+显示屏引脚 &nbsp; &nbsp; &nbsp; ESP32引脚  
+SCL/SCK &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;20  
+SDA &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 21  
+
+# 飞控串口通讯接线
+ESP32引脚 &nbsp; &nbsp; &nbsp; 飞控串口引脚  
+RX &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; TX  
+GND &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;GND  
+
 <img src="https://github.com/mason334/images/blob/main/IMG_0875.JPG" width="600"/>
 
 ## 第四步 上传代码，点亮屏幕  
-将代码上传到ESP32单片机，通过机载5V电源，给ESP32单片机供电，点亮屏幕。 将串口接上飞控，获得屏幕数据。  
+将代码下载后，放到arduino项目目录下，文件夹名称与主程序文件名称一致（J20-fighter-jet-FPV-simflight-cockpit）  
+安装ESP32开发板：ESP32 Dev Module  
+根据主程序代码中include部分要求，安装所需的库文件。  
+mavlink库需要手动安装。下载mavlink.zip文件，将mavlink文件夹放入arduino库文件夹中即可。  
+将代码上传到ESP32单片机，通过机载5V电源，给ESP32单片机供电，点亮屏幕。 **尽量不要用飞控给ESP32供电，避免飞控电流过载。**  
+将串口接上飞控，飞控对应的串口选择**mavlink 1**协议，获得屏幕数据。    
 <img src="https://github.com/mason334/images/blob/main/IMG_1055.JPG" alt="drawing" width="600"/>
 
 ## 第五步 安装其他设备  
