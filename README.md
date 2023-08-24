@@ -76,7 +76,8 @@ GND &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;GND
 安装ESP32开发板：ESP32 Dev Module  
 根据主程序代码中include部分要求，安装所需的库文件。  
 mavlink库需要手动安装。下载mavlink.zip文件，将mavlink文件夹放入arduino库文件夹中即可。  
-将代码上传到ESP32单片机，通过机载5V电源，给ESP32单片机供电，点亮屏幕。 **尽量不要用飞控给ESP32供电，避免飞控电流过载。**  
+通过机载5V电源，给ESP32单片机供电，点亮屏幕。 **尽量不要用飞控给ESP32供电，避免飞控电流过载。**  
+将代码上传到ESP32单片机。注意esp32-S3 N16R8开发板有两个type c接口，上传代码时只能用com这个口（type c接口背面有标注）  
 将串口接上飞控，飞控对应的串口选择**mavlink 1**协议，获得屏幕数据。    
 <img src="https://github.com/mason334/images/blob/main/IMG_1055.JPG" alt="drawing" width="600"/>
 
