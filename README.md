@@ -90,8 +90,8 @@ GND &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;GND
 ## 第四步 上传代码，点亮屏幕  
 将代码下载后，放到arduino项目目录下，文件夹名称与主程序文件名称一致（J20-fighter-jet-FPV-simflight-cockpit）  
 安装ESP32开发板：ESP32S3 Dev Module  
-根据主程序代码中include部分要求，安装所需的库文件。  
-mavlink库需要手动安装。下载mavlink.zip文件，将mavlink文件夹放入arduino库文件夹中即可。  
+根据主程序代码中include部分要求，安装所需的库文件。
+Arduino已经有匹配的MAVlink库了，可以直接在arduino ide中下载安装，不再需要手动下载导入。
 通过机载5V电源，给ESP32单片机供电，点亮屏幕。 **尽量不要用飞控给ESP32供电，避免飞控电流过载。**  
 将代码上传到ESP32单片机。注意esp32-S3 N16R8开发板有两个type c接口，上传代码时只能用com这个口（type c接口背面有标注）  
 将串口接上飞控，飞控对应的串口选择**mavlink 1**协议，获得屏幕数据。    
