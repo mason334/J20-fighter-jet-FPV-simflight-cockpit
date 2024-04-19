@@ -10,7 +10,7 @@
 硬件由4部分组成  
 - 机舱：包含显示器、散热风扇、DJI O3天空端等安装座。
 - 舱盖：包括舱盖框架和风挡文件。
-- 显示器：1块0.69寸OLDE显示器， 1块0.42寸OLED显示器，和1块2.2寸 TFT LCD显示器。
+- 显示器：1块0.69寸OLDE显示器， 1块0.42寸OLED显示器，和1块2.2寸 主显示器。
 - 显示器控制单片机：ESP32-S3  
 
 软件部分是一套用arduino编程语言编写的ESP32-S3控制程序。ESP32-S3通过UART串口与飞控通信，采用mavlink协议。  
@@ -30,7 +30,14 @@
 <img src="https://github.com/mason334/images/blob/main/IMG_1116.JPG" alt="drawing" width="600"/>
 
 
-完成以上准备工作后，你离仿真模拟飞行的距离只差几步了，而且总共花费不到300元人民币。  
+完成以上准备工作后，你离仿真模拟飞行的距离只差几步了，而且总共花费不到300元人民币（TFT版）。  
+## 第零步，选择你喜欢的座舱版本
+- 目前开发了两个版本的座舱。
+- 一个是采用2.2寸tft显示屏的座舱，主显示屏成本较低（约35元）。使用文件夹“spi_tft_320_240_cockpit_20240419”里面的代码驱动2.2寸 tft显示屏。
+- 另外一个版本是采用amoled的显示屏，主显示屏成本高（约190元），结果是比例更协调，亮度更高，颜色更鲜艳。使用文件夹“cockpit_lilygo_2024_4_13”里面的代码驱动lilygo amoled显示屏。这个版本的座舱还配备了光学HUD，需要一块单独的esp32单片机来驱动。使用文件夹“oled_hud_attitude_indicator_2024_4_9”里的代码来驱动这个光学hud。
+- 相关视频效果见up主B站相关视频，传送连接https://space.bilibili.com/1096820983
+
+
 ## 第一步 打印座舱和舱盖。按照风挡文件，裁剪孰料片，制作风挡  
 <img src="https://github.com/mason334/images/blob/main/IMG_0859.JPG" alt="drawing" width="600"/>
 由于TFT LCD屏幕在阳光下亮度不够，直接在阳光下无法看清屏幕。所以风挡采用遮光塑料片，用于阳光下飞行使用。也可采用透明塑料片制作，非强光下飞行使用。
@@ -39,11 +46,15 @@
 - ESP32-s3单片机（源地工作室，esp32-S3 N16R8)
 - 信利光电 0.69寸 96x16 OLED SSD1306
 - 信利光电0.42 72x40 OLED SSD1306
-- 信泰微电子 2.2寸 ILI9341 SPI TFT LCD
+- 信泰微电子 2.2寸 ILI9341 SPI TFT LCD （适配SPI TFT 版座舱）
+- Lilygo T-display s3 amoled 显示屏 （适配Lilygo AMOLED版座舱）
+- 光学HUD使用的显示屏采用1.5寸Futaba ELW501AAR 128*128 OLED显示屏（日本进口灰阶oled屏，类似的SSD1327芯片驱动的128X128OLED也可以）
 - 盈讯 3510 液压轴承 散热风扇
 
 ## 第三步 焊接  
-根据控制程序要求，焊接3块屏幕和ESP32单片机的接线。焊接ESP32单片机与飞控通信的排线。  
+根据控制程序要求，焊接3块屏幕和ESP32单片机的接线。焊接ESP32单片机与飞控通信的排线。
+# Lilygo T-display s3 amoled 显示屏无需焊接，屏幕和esp32单片机已经连接好
+
 # 2.2寸显示屏接线如下  
 显示屏引脚 &nbsp; &nbsp; ESP32引脚  
 MISO &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;13  
