@@ -10,7 +10,7 @@
 硬件由4部分组成  
 - 机舱：包含显示器、散热风扇、DJI O3天空端等安装座。
 - 舱盖：包括舱盖框架和风挡文件。
-- 显示器：1块0.69寸OLDE显示器， 1块0.42寸OLED显示器，和1块2.2寸 主显示器。
+- 显示器：1块0.69寸OLDE显示器， 1块0.42寸OLED显示器，和1块2.2寸主tft lcd显示器或者1.9寸amoled主显示器。
 - 显示器控制单片机：ESP32-S3  
 
 软件部分是一套用arduino编程语言编写的ESP32-S3控制程序。ESP32-S3通过UART串口与飞控通信，采用mavlink协议。  
@@ -47,7 +47,7 @@
 - 信利光电 0.69寸 96x16 OLED SSD1306
 - 信利光电0.42 72x40 OLED SSD1306
 - 信泰微电子 2.2寸 ILI9341 SPI TFT LCD （适配SPI TFT 版座舱）
-- Lilygo T-display s3 amoled 显示屏 （适配Lilygo AMOLED版座舱）
+- Lilygo T-display s3 1.9寸amoled 显示屏 （适配Lilygo AMOLED版座舱）
 - 光学HUD使用的显示屏采用1.5寸Futaba ELW501AAR 128*128 OLED显示屏（日本进口灰阶oled屏，类似的SSD1327芯片驱动的128X128OLED也可以）
 - 盈讯 3510 液压轴承 散热风扇
 
