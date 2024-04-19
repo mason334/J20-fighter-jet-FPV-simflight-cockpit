@@ -95,7 +95,11 @@ mavlink库需要手动安装。下载mavlink.zip文件，将mavlink文件夹放�
 通过机载5V电源，给ESP32单片机供电，点亮屏幕。 **尽量不要用飞控给ESP32供电，避免飞控电流过载。**  
 将代码上传到ESP32单片机。注意esp32-S3 N16R8开发板有两个type c接口，上传代码时只能用com这个口（type c接口背面有标注）  
 将串口接上飞控，飞控对应的串口选择**mavlink 1**协议，获得屏幕数据。    
+- SPI TFT LCD 版座舱
 <img src="https://github.com/mason334/images/blob/main/IMG_1055.JPG" alt="drawing" width="600"/>
+- Lilygo AMOLED版座舱
+<img src="https://github.com/mason334/images/blob/main/IMG_3536.JPG" alt="drawing" width="600"/>
+
 
 ## 第五步 安装其他设备  
 将天空端、散热风扇安装好，然后座舱盖固定到机舱上，完成安装
