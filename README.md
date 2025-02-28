@@ -97,15 +97,6 @@ RX &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GPIO44
 
 注意：如果只是接收数据，只需要连接这两根线即可
 
-通信参数：
-
-波特率：57600
-
-数据位：8
-
-停止位：1
-
-校验位：无
 
 <img src="https://github.com/mason334/images/blob/main/IMG_0875.JPG" width="600"/>
 
