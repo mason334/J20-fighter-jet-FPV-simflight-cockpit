@@ -85,6 +85,20 @@ ESP32引脚 &nbsp; &nbsp; &nbsp; 飞控串口引脚
 RX &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; TX  
 GND &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;GND  
 
+在T-Display-S3 AMOLED开发板上：
+UART0对应的引脚是：
+TX: GPIO43
+RX: GPIO44
+连接方式：
+飞控的TX连接到开发板的RX(GPIO44)
+飞控的GND连接到开发板的GND
+注意：如果只是接收数据，只需要连接这两根线即可
+通信参数：
+波特率：57600
+数据位：8
+停止位：1
+校验位：无
+
 <img src="https://github.com/mason334/images/blob/main/IMG_0875.JPG" width="600"/>
 
 ## 第四步 上传代码，点亮屏幕  
