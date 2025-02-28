@@ -95,6 +95,9 @@ RX &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GPIO44
 
 飞控的GND连接到开发板的GND
 
+波特率：115200（觉得高的可以代码中修改Serial.begin(115200);）
+
+
 注意：如果只是接收数据，只需要连接这两根线即可
 
 
