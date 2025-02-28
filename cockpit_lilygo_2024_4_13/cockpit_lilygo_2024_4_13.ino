@@ -62,7 +62,8 @@ void setup() {
   u8g1.setFont(u8g2_font_wqy16_t_gb2312b);
   u8g2.setFont(u8g2_font_wqy16_t_gb2312b);
 
-  Serial.begin(57600);
+  Serial.begin(115200);
+  Serial.setRxBufferSize(2048); // 增加接收缓冲区大小
 
   spr.createSprite(165, 240);  //attitude indicator
   spr_meters.createSprite(80, 240);
@@ -98,6 +99,7 @@ xTaskCreatePinnedToCore(
 
 }
 
+/*
 // task1code, 显示主显示屏信息
 void Task1code( void * pvParameters ){
   //task 的时间不能太短，否则会触发task watchdog,导致芯片重启
@@ -120,8 +122,38 @@ void Task1code( void * pvParameters ){
       Millis0 = now0;      
     }      
   } 
-}
+}*/
+void Task1code(void * pvParameters) {
+  const uint32_t UPDATE_INTERVAL = 20; // 50Hz (1000ms/50 = 20ms)
+  uint32_t previousMillis = 0;
+  
+  for(;;) {
+    uint32_t currentMillis = millis();
+    
+    // 检查是否到达更新间隔
+    if(currentMillis - previousMillis >= UPDATE_INTERVAL) {
+      previousMillis = currentMillis;
+      
+      // 获取并处理MAVLink数据
+      get_mavlink_data();
+      
+      // 更新显示
+      push_main_screen();
+      adjust_brightness_main();
 
+      // 计算FPS
+      frameCount0++;
+      now0 = currentMillis;
+      if (now0 - Millis0 >= 2000) {
+        fps0 = frameCount0/2;
+        frameCount0 = 0;   
+        Millis0 = now0;      
+      }
+    }
+    
+    vTaskDelay(1); // 防止看门狗复位
+  }
+}
 // Task2code: 显示1、2屏幕信息
 void Task2code( void * pvParameters ){
 

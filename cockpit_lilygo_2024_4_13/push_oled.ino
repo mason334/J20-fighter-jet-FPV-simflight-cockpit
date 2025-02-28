@@ -1,5 +1,8 @@
+/*
 void push_main_screen()
 {
+
+  
   get_mavlink_data();
   cal_att_cord();
   draw_new_attitude();
@@ -18,6 +21,33 @@ void push_main_screen()
       lcd_PushColors(166+4+80, 0, 200, 240, (uint16_t*)spr_mid.getPointer());  
     }      
 }
+*/
+
+void push_main_screen() {
+  static uint32_t last_meters_update = 0;
+  const uint32_t METERS_UPDATE_INTERVAL = 500; // 500ms更新一次仪表
+  get_mavlink_data();
+  // 更新姿态显示
+  cal_att_cord();
+  draw_new_attitude();
+  lcd_PushColors(0, 0, 165, 240, (uint16_t*)spr.getPointer());
+
+  // 更新仪表和中间显示区域
+  uint32_t now = millis();
+  if (now - last_meters_update >= METERS_UPDATE_INTERVAL) {
+    draw_meters();
+    draw_meters_2();
+    lcd_PushColors(166+4, 0, 80, 240, (uint16_t*)spr_meters.getPointer());
+    lcd_PushColors(536-80, 0, 80, 240, (uint16_t*)spr_meters_2.getPointer());
+    
+    draw_mid();
+    lcd_PushColors(166+4+80, 0, 200, 240, (uint16_t*)spr_mid.getPointer());
+    
+    last_meters_update = now;
+  }
+}
+
+
 
 // 上方小屏数据 96X16
 void push_u8g1()
