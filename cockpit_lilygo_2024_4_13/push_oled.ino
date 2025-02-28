@@ -43,7 +43,10 @@ void push_u8g2()
 
 
 void adjust_brightness_main(){
-  brightness_new_main = (chan6_raw-1000)*255/1000; //only the integral part is stored and the fractional part of the number is lost
+  // 将遥控器通道7的值(1000-2000)映射到亮度值(0-255)
+  brightness_new_main = (chan7_raw-1000)*255/1000; 
+  
+  // 只有当亮度变化超过20才更新,避免频繁调整
   if (abs(brightness_new_main - brightness_old_main) > 20){
     lcd_brightness(brightness_new_main);
     brightness_old_main = brightness_new_main;
@@ -51,9 +54,13 @@ void adjust_brightness_main(){
 }
 
 void adjust_brightness_small(){
-  brightness_new = (chan6_raw-1000)*255/1000; //only the integral part is stored and the fractional part of the number is lost
+  // 同样映射遥控器通道7的值到亮度值
+  brightness_new = (chan7_raw-1000)*255/1000;
+  
+  // 亮度变化超过8时才更新
   if (abs(brightness_new - brightness_old) > 8){
     u8g1.setContrast(brightness_new);
+    // 第二个OLED亮度值除以4(可能是因为其亮度范围不同)
     u8g2.setContrast(brightness_new/4);
     brightness_old = brightness_new;
   }

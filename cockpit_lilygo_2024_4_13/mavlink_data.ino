@@ -149,13 +149,13 @@ void get_mavlink_data(){
           {
             mavlink_rc_channels_raw_t rc_channels_raw;
             mavlink_msg_rc_channels_raw_decode(&msg, &rc_channels_raw);
-            	// chan1_raw = rc_channels_raw.chan1_raw;
+              // chan1_raw = rc_channels_raw.chan1_raw;
               // chan2_raw = rc_channels_raw.chan2_raw;
               // chan3_raw = rc_channels_raw.chan3_raw;
               // chan4_raw = rc_channels_raw.chan4_raw;
               // chan5_raw = rc_channels_raw.chan5_raw;
-            chan6_raw = rc_channels_raw.chan6_raw;
-              // chan7_raw = rc_channels_raw.chan7_raw;
+            // chan6_raw = rc_channels_raw.chan6_raw;
+            chan7_raw = rc_channels_raw.chan7_raw;
               // chan8_raw = rc_channels_raw.chan8_raw;
               // rc_channels_raw.port = port;
             // rssi = rc_channels_raw.rssi;
