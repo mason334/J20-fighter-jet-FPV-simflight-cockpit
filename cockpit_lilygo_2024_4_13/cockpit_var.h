@@ -191,3 +191,4 @@ unsigned long fps0 = 0;
 unsigned long fps1 = 0;
 unsigned long fps2 = 0;
 unsigned long fps3 = 0;
+volatile bool mavlink_data_ready = false;

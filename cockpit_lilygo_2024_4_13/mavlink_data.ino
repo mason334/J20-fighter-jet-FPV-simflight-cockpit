@@ -2,11 +2,16 @@
 // 或者在\Arduino\libraries\mavlink\common 里面也能找到msg的定义
 
 void get_mavlink_data(){
-  while (Serial.available() > 0) {
+  uint32_t max_packets = 10; // 限制每次处理的最大包数
+  uint32_t packet_count = 0;
+  
+  while (Serial.available() > 0 && packet_count < max_packets) {
     // Serial.read前不能有任何干扰串口信息，比如往串口发送信息的Serial.print,否则会干扰串口数据。
     uint8_t result = Serial.read(); // 读取串口信息，假设此时串口已经开始发送信息///
     msgReceived = mavlink_parse_char(MAVLINK_COMM_1, result, &msg, &status);
     if (msgReceived) {
+      packet_count++;
+      mavlink_data_ready = true;  // 设置数据就绪标志
       // Serial.print("Msgid: ");  Serial.println(msg.msgid);
       switch (msg.msgid) {  
         case MAVLINK_MSG_ID_HEARTBEAT:  // #0
@@ -149,13 +154,13 @@ void get_mavlink_data(){
           {
             mavlink_rc_channels_raw_t rc_channels_raw;
             mavlink_msg_rc_channels_raw_decode(&msg, &rc_channels_raw);
-            	// chan1_raw = rc_channels_raw.chan1_raw;
+              // chan1_raw = rc_channels_raw.chan1_raw;
               // chan2_raw = rc_channels_raw.chan2_raw;
               // chan3_raw = rc_channels_raw.chan3_raw;
               // chan4_raw = rc_channels_raw.chan4_raw;
               // chan5_raw = rc_channels_raw.chan5_raw;
-            chan6_raw = rc_channels_raw.chan6_raw;
-              // chan7_raw = rc_channels_raw.chan7_raw;
+            // chan6_raw = rc_channels_raw.chan6_raw;
+            chan7_raw = rc_channels_raw.chan7_raw;
               // chan8_raw = rc_channels_raw.chan8_raw;
               // rc_channels_raw.port = port;
             // rssi = rc_channels_raw.rssi;

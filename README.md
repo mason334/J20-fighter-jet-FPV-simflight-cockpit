@@ -73,6 +73,7 @@ SCL/SCK &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2
 SDA &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 42  
 VCC &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3V3  
 GND &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GND  
+
 # 0.42寸72x40显示屏接线如下  
 显示屏引脚 &nbsp; &nbsp; &nbsp; ESP32引脚  
 SCL/SCK &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;20  
@@ -84,6 +85,22 @@ GND &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GND
 ESP32引脚 &nbsp; &nbsp; &nbsp; 飞控串口引脚  
 RX &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; TX  
 GND &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;GND  
+
+## 在T-Display-S3 AMOLED开发板上对应的引脚是：
+TX &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GPIO43  
+RX &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GPIO44  
+
+连接方式：
+
+飞控的TX连接到开发板的RX(GPIO44)
+
+飞控的GND连接到开发板的GND
+
+波特率：115200（觉得高的可以代码中修改Serial.begin(115200);）
+
+
+注意：如果只是接收数据，只需要连接这两根线即可
+
 
 <img src="https://github.com/mason334/images/blob/main/IMG_0875.JPG" width="600"/>
 
