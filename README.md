@@ -1,4 +1,4 @@
-# J20-fighter-jet-FPV-simflight-cockpit
+# 5代战斗机模拟飞行座舱
 ## J20战机模拟座舱 Chengdu J20 fighter jet FPV simflight cockpit  
 由于各种原因，最终只能有少部分人人成为飞行员，翱翔在蓝天。但是，我们依然向往飞行！  
 多亏半导体和无线电技术的高速发展，已经让FPV飞行成为可能。  
